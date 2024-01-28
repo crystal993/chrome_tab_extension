@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^7.1.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/chrome": "^0.0.256",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.70",
     "@types/react": "^18.2.47",
@@ -23,10 +25,17 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
+    "globals": {
+      "chrome": true
+    },
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "env": {
+      "webextensions": true,
+      "browser": true
+    }
   },
   "browserslist": {
     "production": [
